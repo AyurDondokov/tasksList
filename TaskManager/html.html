@@ -3,91 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/style.css" rel="stylesheet">
 
     <title>Document</title>
 </head>
 
 <body>
-    <div class="main-container">
-        <div class="todo-list">
-            <div class="todo-list__header">
-                Список задач
-                <label class="todo-list__add"><button class="bl-btn todo-list__button"
-                        type="button"></button>Добавить</label>
-            </div>
-            <ul class="todo-list__list">
-                <li class="task">
-                    <input type="checkbox" class="bl-btn task__done">
-                    <span class="task__important"> 💢</span>
-                    <span class="task__discription"> Task1</span>
-                    <button class="bl-btn task__button-del" type="button"></button>
-                    <button class="bl-btn task__button-edit" type="button"></button>
-                </li>
-                <li class="task">
-                    <input type="checkbox" class="bl-btn task__done">
-                    <span class="task__important"></span>
-                    <span class="task__discription"> Task2</span>
-                    <button class="bl-btn task__button-del" type="button"></button>
-                    <button class="bl-btn task__button-edit" type="button"></button>
-                </li>
-            </ul>
-        </div>
-        <div class="card-container">
-            <form class="card">
-                <span class="card__header"> Карточка задачи</span>
-                <span class="card__input-text"> Задача</span>
-                <input type="text" name="discription">
-                <label><input type="checkbox" name="important"> Важно 💢</label>
-                <div>
-                    <button type="submit" class="card__button-save">Сохранить</button>
-                    <button type="button" class="card__button-cancel">Отмена</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
-    <div class="main">
-        <div class="task-constructor">
-            <form class="constructor-form">
-                <span class="constructor__header">Конструктор задач</span>
-                <input type="text" name="description">
-                <label>
-                    <input type="checkbox" name="important"> Важно
-                </label>
-                <div>
-                    <button type="submit" class="constructor__button-save">Сохранить</button>
-                    <button type="button" class="constructor__button-cancel">Отмена</button>
-                </div>
-            </form>
-        </div>
+    <div class="todo-list">
         <div class="tasks">
-            <div class="task-header">
-                Список задач
-                <button class="task__add-button"
+            <div class="tasks__header">
+                Tasks list
+                <button type="button" class="task-list__add-button">Add task</button>
             </div>
             <ul class="task-list">
                 <li class="task-list__item">
-                    <input type="checkbox" class="task-list__done">
-                    <span class="task__important">☻</span>
-                    <span class="task__discription">Задача 1</span>
-                    <button class="bl-btn task__del-button" type="button">Уд.</button>
-                    <button class="bl-btn task__edit-button" type="button">Ред.</button>
-                </li>
-                <li class="task-list__item">
-                    <input type="checkbox" class="task-list__done">
-                    <span class="task__important"></span>
-                    <span class="task__discription">Задача 2</span>
-                    <button class="bl-btn task__del-button" type="button">Уд.</button>
-                    <button class="bl-btn task__edit-button" type="button">Ред.</button>
+                    <input class="task-list__done" type="checkbox" name="">
+                    <span class="task-list__prio">!!!</span>
+                    <span class="task-list__description">Task 1</span>
+                    <button type="button" class="task-list__edit-button">edit</button>
+                    <button type="button" class="task-list__del-button">del</button>
                 </li>
             </ul>
         </div>
-
+        <div class="task-form">
+            <hr>
+            <form>
+                <div class="task-form__header">Task constructor</div>
+                <br>
+                <label class="task-form__name">Task</label>
+                <br>
+                <input class="task-form__description" type="text" name="description" placeholder="Description">
+                <br>
+                <label>
+                    <input type="checkbox" name="prio">
+                    High priority
+                </label>
+                <br>
+                <button type="submit" class="task-form__save">Save</button>
+                <button type="button" class="task-form__close">Close</button>
+            </form>
+        </div>
     </div>
-
     <script src="./scripts/app.js"></script>
 </body>
 

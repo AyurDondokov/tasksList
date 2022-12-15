@@ -7,7 +7,7 @@
 body {
     font-family: "Roboto Regular", Helvetica, sans-serif;
     background-color: rgb(235, 235, 235);
-    font-size: 17px;
+    font-size: 20px;
 }
 
 button {
@@ -15,19 +15,12 @@ button {
     cursor: pointer;
 }
 
-.bl-btn {
-    background-color: #707070;
-    border: unset;
-    color: white;
-    border-radius: 3px;
-}
-
 input[type="checkbox"] {
-    width: 17px;
+    width: 25px;
     height: 17px;
 }
 
-.main-container {
+.todo-list {
     width: 60%;
     height: 2000px;
     margin: 0px auto;
@@ -40,54 +33,44 @@ input[type="checkbox"] {
     grid-template-columns: 1fr 1fr;
 }
 
-.todo-list {
+.tasks {
     background-color: rgb(247, 247, 247);
     box-shadow: 0px 0px 10px 0px #00000029;
 }
 
-.todo-list__list {
+.task-list {
     list-style-type: none;
 }
 
-.todo-list__header {
+.tasks__header {
     font-size: 22px;
     margin-bottom: 15px;
     padding: 15px 15px 0px 15px;
 }
 
-.todo-list__button {
-    margin-right: 5px;
-    width: 17px;
-    height: 17px;
-    position: relative;
-    top: -5px;
+.task-list__edit-button,
+.task-list__del-button {
+    color: white;
+    margin-bottom: 5px;
+    border-radius: 9px;
+    padding: 0px 5px 8px 5px;
 }
 
-.todo-list__button::after,
-.todo-list__button::before {
-    display: block;
-    position: absolute;
-    top: 3px;
-    left: 7px;
-    content: '';
-    width: 3px;
-    height: 11px;
-    background-color: white;
-    /* border: 2px solid white; */
+.task-list__edit-button{
+    background-color: #3F88E8;
+}
+.task-list__del-button{
+    background-color: red;
 }
 
-.todo-list__button::before {
-    transform: rotate(90deg);
-}
-
-.todo-list__add {
+.task-list__add-button {
     margin-top: 7px;
     float: right;
     font-size: 14px;
 }
 
 
-li.task {
+li.task-list__item {
     padding: 11px 15px;
     margin-bottom: 2px;
     background-color: rgb(235, 235, 235);
@@ -97,39 +80,27 @@ li.task {
 
 }
 
-li.task button {
+li.task-list__item button {
     display: block;
     float: right;
-    margin-left: 3px;
-    width: 20px;
+    margin: 3px;
+    min-width: 30px;
     height: 20px;
 }
 
-.task__button-del {
-    background: 0% 0%/100% url('../icons/trashbin@2x.png') no-repeat;
+.task-list__prio{
+    color: red;
 }
 
-.task__button-edit {
-    background: 0% 0%/100% url('../icons/pencil@2x.png') no-repeat;
-}
-
-.task__button-del:active,
-.task__button-edit:active {
-    background-color: rgba(0, 0, 0, 0.164);
-}
-
-
-
-input[type="checkbox"].task__done {
+input[type="checkbox"].task-list__done {
 
     position: relative;
     top: 2px;
 }
 
-.card {
+.task-form{
     padding: 28px 30px;
-    position: fixed;
-    width: 25%;
+    width: 100%;
     top: 50px;
     background-color: rgb(247, 247, 247);
     font-size: 14px;
@@ -138,48 +109,46 @@ input[type="checkbox"].task__done {
     height: fit-content;
 
 }
-
-.card>* {
+.task-form>* {
     display: block;
-
 }
 
-.card__header {
-    font-size: 18px;
-    margin-bottom: 7px;
+.task-form__header{
+    font-size: 24px;
 }
 
-.card__input-text {
+.task-form__name{
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
-.card input[type="text"] {
+.task-form__description {
+    padding-right: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.task-list__item input[type="text"] {
     padding: 4px 5px 3px 5px;
     margin-bottom: 18px;
     width: 100%;
 }
 
-.card__important {
-    position: relative;
-    top: 3px;
-    margin-bottom: 17px;
-}
-
-.card__button-save,
-.card__button-cancel {
+.task-form__save,
+.task-form__close {
     padding: 8px 28px 7px 28px;
     border-width: 0;
     border-radius: 32px;
 
 }
 
-.card__button-save {
+.task-form__save {
     color: white;
     background-color: #3F88E8;
     margin-bottom: 5px;
 }
 
-.card__button-cancel {
+.task-form__close {
     background-color: white;
     border: 1px solid #707070;
     color: black;
